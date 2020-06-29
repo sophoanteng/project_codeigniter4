@@ -1,7 +1,9 @@
 <?= $this->extend('layouts/main') ?>
 <?= $this->section('content') ?>
 <div class="auth">
-  <div class="auth__header"></div>
+  <div class="auth__header">
+    
+  </div>
   <div class="auth__body">
     <form class="auth__form" autocomplete="off" action="/signin" method="post">
       <div class="auth__form_body">
@@ -40,6 +42,9 @@
         </div>
       </div>
     </form>
+    <?php if(isset($messages)): ?>
+          <?= $messages->ListErrors() ?>
+          <?php endif ?>
   </div>
 </div>
 <?= $this->endSection() ?>
