@@ -31,12 +31,21 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 // $routes->get('/', 'Home::index');
-$routes->group('signin', function($routes)
-{
-      $routes->add('/', 'Author::index');
-      $routes->add('list', 'Author::pizzaList');
-      $routes->add('show', 'Author::signUpForm');
-});
+//   $routes->group('pizza', function($routes)
+//   {
+//      $routes->add('/', 'Author::formLogin');
+//      $routes->add('list', 'Author::viewPizza');
+//      $routes->add('signup', 'Author::formRegister');
+//   });
+//  $routes->get('/', 'Author::formLogin');
+//  $routes->add('/signin', 'Author::formLogin');
+//  $routes->match(['get', 'post'], 'register', 'Author::formLogin');
+//  $routes->add('/list', 'Author::viewPizza');
+//  $routes->add('/signup', 'Author::formRegister');
+
+$routes->add('/', 'Author::loginUser');
+$routes->add('register', 'Author::registerUser');
+$routes->add('index', 'Dashboard::index');
 /**
  * --------------------------------------------------------------------
  * Additional Routing
